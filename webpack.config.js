@@ -1,32 +1,41 @@
-const path = require('path');
+const path = require('path')
+const { webpack } = require('webpack')
 
-const config = {
-  entry: ['@babel/polyfill', './src/index.js'],
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'main.js',
-  },
-  devServer: {
-    static: path.resolve(__dirname, 'build'),
-    compress: true,
-    port: 6969,
-  },
-  devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+const config = (env, argv) => {
+
+  return {
+    entry: ['@babel/polyfill', './src/index.js'],
+    output: {
+      path: path.resolve(__dirname, 'build'),
+      filename: 'main.js',
+    },
+    devServer: {
+      static: path.resolve(__dirname, 'build'),
+      compress: true,
+      port: 1337,
+      hot: true,
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+          },
         },
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
-};
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
+    },
+    resolve: {
 
-module.exports = config;
+    extensions: ['.jsx', '.js']
+  },
+    devtool: 'source-map',
+  }
+}
+
+module.exports = config
