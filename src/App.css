@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(9, 82, 57, 0.788);
+  background-color: rgba(206, 250, 234, 0.788);
 }
 
 .select-dropdown{
@@ -40,7 +40,7 @@ border: none;
 
 .pokemon-spirit {
   text-align: center;
-  background-color: rgb(141, 233, 176);
+  background-color: rgb(219, 255, 233);
 }
 
 .pokemon-description {
@@ -50,6 +50,6 @@ border: none;
 
 .pagination {
   background-color: white;
-  width: 80%;
+  width: 50%;
   text-align: center;
 }
