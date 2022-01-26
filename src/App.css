@@ -1,55 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+
+
 * {
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
   box-sizing: content-box;
   margin: 0;
+  border-radius: 10px;
 }
-
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .app {
+  background-color: white;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: min-content;
+  box-shadow: rgba(2, 35, 51, 0.527) 0px 7px 29px 0px;
+  border-radius: 20px;
+
+}
+.card-view {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(206, 250, 234, 0.788);
+  margin: 0 5rem;
+  width: 90%;
+  min-width: max-content;
 }
 
 .select-dropdown{
-  width: 100%;
-  height: 3rem;
-  text-align: center;
+  width: 90%;
+  padding: .4rem;
 }
-.select-dropdown select {
-  font-size: 1rem;
-  font-weight: normal;
-  width: 80%;
-  max-width: 100%;
-  padding: .5rem 2rem .5rem .8rem;
-  border: none;
-  background-color: none;
 
-}
-.select-dropdown select:active, .select-dropdown select:focus {
-  outline: none;
-  box-shadow: none;
-}
-.select-dropdown:after {
-border: none;
-}
 
 .pokemon-spirit {
   text-align: center;
-  background-color: rgb(219, 255, 233);
+}
+.pokemon-spirit img{
+  border: 2px solid black;
+  width: 70%;
 }
 
 .pokemon-description {
-    padding: .5rem 2rem .5rem .8rem;
-    background-color: azure;
+  color: black;
+  background-color: white;
+  padding: .5rem 2rem .5rem .8rem;
+  margin: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 27rem ;
 }
 
 .pagination {
-  background-color: white;
-  width: 50%;
-  text-align: center;
+  background: none;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  width:30%;
+  min-width: max-content;
+}
+
+button:hover, button:active {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.btn-disabled, .btn-disabled:hover {
+  cursor: default;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.685);
+  border-color: rgba(216, 213, 213, 0.87);
+  
+}
+
+img {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media (max-width: 800px) {
+  .app {
+    flex-direction: column;
+  }
 }

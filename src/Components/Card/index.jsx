@@ -11,12 +11,11 @@ const Card = ({ pokemon }) => {
     /[\n\f]/g,
     ' ',
   );
-
-  console.log(pokemon);
   return (
     <CardEle className='card'>
+      <h2 style={{ textAlign: 'center', margin: '2rem 0' }}>{pokemon.name}</h2>
       <div className='pokemon-spirit'>
-        <img src={getPokemonSpiritUrl(pokemon.id)} />
+        <img  src={getPokemonSpiritUrl(pokemon.id)} />
       </div>
       <div className='pokemon-description'>
         <p>{description}</p>
