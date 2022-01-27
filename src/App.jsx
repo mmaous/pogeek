@@ -2,14 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getPokemon, getPokemonList } from './services/pokemon';
 
 import Card from './Components/Card';
-import styled from 'styled-components';
 import Select from './Components/Select';
-
-const Button = styled.button`
-  background: transparent;
-  padding: 0.3rem 0.6rem;
-  margin: 1rem;
-`;
 
 const App = () => {
   const [currentPokemon, setCurrentPokemon] = useState(1);
@@ -18,14 +11,6 @@ const App = () => {
   const [isFirst, setIsFirst] = useState(true);
   const [isLast, setIsLast] = useState(false);
 
-  // const disabledBtn = {
-  //   borderColor: 'gray',
-  //   color: 'gray',
-  //   '&:hover': {
-  //     backgroundColor: 'white',
-  //     color: 'white',
-  //   },
-  // };
 
   useEffect(() => {
     getPokemonList()
@@ -73,7 +58,7 @@ const App = () => {
   return (
     <div className='app'>
       {pokemonList.length === 0 ? (
-        'loading pokemons...'
+        <div style={{ padding: '5rem' }}>loading pokemons...</div>
       ) : (
         <>
           <div className='select-dropdown'>
@@ -86,18 +71,18 @@ const App = () => {
           <div className='card-view'>
             <Card pokemon={fetched} />
             <div className='pagination'>
-              <Button
+              <button
                 className={isFirst ? 'btn-disabled' : ''}
                 name='previous'
                 onClick={handlePrevious}>
                 Previous
-              </Button>
-              <Button
+              </button>
+              <button
                 className={isLast ? 'btn-disabled' : ''}
                 name='next'
                 onClick={handleNext}>
                 Next
-              </Button>
+              </button>
             </div>
           </div>
         </>

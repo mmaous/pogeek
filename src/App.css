@@ -1,104 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
-
 * {
   font-family: 'Poppins', sans-serif;
-  font-weight: 100;
-  box-sizing: content-box;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: small;
   margin: 0;
   border-radius: 10px;
-} 
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
 #root {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .app {
+  margin: 1rem 0;
   background-color: white;
-  margin: 2rem 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-  width: min-content;
-  box-shadow: rgba(2, 35, 51, 0.527) 0px 7px 29px 0px;
+  gap: 7rem;
+  width: 90%;
+  height: 95vh;
+  box-shadow: rgb(136, 165, 191) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   border-radius: 20px;
-
+  max-width: 1000px;
+  min-width: 297px;
 }
-.card-view {
+
+.select-dropdown {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 5rem;
-  width: 90%;
-  min-width: max-content;
+  flex-direction: column;
+  margin-top: 1.5rem;
 }
 
-.select-dropdown{
-  width: 90%;
-  padding: .4rem;
+.react-select-wrap {
+  width: 80%;
+  max-width: 540px;
 }
 
-
-.pokemon-spirit {
-  text-align: center;
-}
-.pokemon-spirit img{
-  border: 2px solid black;
+.pokemon-spirit img {
   width: 70%;
 }
 
-.pokemon-description {
-  color: black;
-  background-color: white;
-  padding: .5rem 2rem .5rem .8rem;
-  margin: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5rem;
-  width: 27rem ;
-}
-
 .pagination {
-  background: none;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 95%;
+  display: flexbox;
+  gap: 2rem;
+}
+button {
+  font-size: 1rem;
+  background: transparent;
+  margin: 0 1rem;
 }
 
 .pagination button {
-  width:30%;
-  min-width: max-content;
+  width: 25%;
+  height: 2rem;
 }
 
-button:hover, button:active {
+button:hover,
+button:active {
   cursor: pointer;
   background-color: black;
   color: white;
   border-color: black;
 }
 
-.btn-disabled, .btn-disabled:hover {
+.btn-disabled,
+.btn-disabled:hover {
   cursor: default;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.685);
   border-color: rgba(216, 213, 213, 0.87);
-  
+}
+.card-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 90%;
+  height: 60vh;
+  max-width: 600px;
+  min-width: 300px;
 }
 
-img {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0;
 }
 
-@media (max-width: 800px) {
-  .app {
-    flex-direction: column;
-  }
+.pokemon-spirit {
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.767) 0px 7px 20px 0px;
+  width: 90%;
+}
+
+.pokemon-description,
+.name {
+  color: white;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.767) 0px 7px 20px 0px;
+  text-align: center;
+  padding: 2rem 3rem;
+  width: 90%;
 }

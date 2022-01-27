@@ -25,16 +25,20 @@ const Select = (props) => {
     })
   };
   return (
-    <div className='select-dropdown'>
-      <label style={{ fontSize: '.8rem', textAlign: 'left' }}>
-        <em>Select a Pokémon : </em>
-      </label>
-      <SelectReact
-        options={props.options}
-        defaultValue={'Select a Pokémon : '}
-        onChange={props.onChange}
-        styles={customStyles}
-      />
+    <div className='react-select-wrap'>
+      <div style={{ marginBottom: '1rem' }}>
+        <label>
+          <em>Select a Pokémon : </em>
+        </label>
+      </div>
+      <div>
+        <SelectReact
+          options={props.options}
+          defaultValue={'Select a Pokémon : '}
+          onChange={props.onChange}
+          styles={customStyles}
+        />
+      </div>
     </div>
   );
 };
